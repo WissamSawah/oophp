@@ -15,7 +15,7 @@ Min me-sida i kursen oophp
 
 Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/index.md`.
 
-[FIGURE src="image/me.jpg?w=250&sharpen&q=100" class="right"]
+[FIGURE src="image/me2.jpg?w=250&sharpen&q=100" class="right"]
 
 Detta är min me-sida i kursen. Denna sidan innehåller en presentation av mig själv. Underhåll denna sidan under hela kursen och uppdatera den efter hand och behov.
 
