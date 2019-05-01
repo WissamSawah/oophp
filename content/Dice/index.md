@@ -4,7 +4,10 @@ Välkommen till Tärningsspelet 100!
 Välkommen till Tärningsspelet 100!
 
 
-[Starta ett nytt spel!](100)
+[Starta ett nytt spel!](Dice1/init)
+
+[Tillbaka till mitt spel](Dice1/play)
+
 
 
 Spelregler och spelrunda:

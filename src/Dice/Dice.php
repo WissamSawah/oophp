@@ -14,12 +14,13 @@ class Dice
     */
     public $player1;
     public $player2;
-    private $player1Turn;
-    private $player2Turn;
-    private $player1Dice;
-    private $player2Dice;
-    private $btnOff;
-    private $count;
+    private $player1Turn = [];
+    private $player2Turn = [];
+    private $player1Dice = [];
+    private $player2Dice = [];
+    private $player1DicesHisto    = [];
+    private $player2DicesHisto    = [];
+    private $btnOff = ["", ""];
 
     /**
      * Constructor to initiate the dicehand with a number of dices.
@@ -35,7 +36,6 @@ class Dice
         $this->player1Dice    = [];
         $this->player2Dice    = [];
         $this->btnOff         = ["", ""];
-        $this->count          = 0;
     }
 
     /**
@@ -70,6 +70,7 @@ class Dice
         // add the round to html page
         for ($i = 0; $i < 3; $i++) {
             $this->player1Turn[] = $this->round[$i];
+            $this->player1DicesHisto[] = $this->round[$i];
         }
 
         //unavailable button depend on turn
@@ -105,13 +106,12 @@ class Dice
         // add the round to html page
         for ($i = 0; $i < 3; $i++) {
             $this->player2Turn[] = $this->round[$i];
+            $this->player2DicesHisto[] = $this->round[$i];
         }
 
         //unavailable button depend on turn
         if (in_array(1, $this->round)) {
             $this->unavailable(1);
-        } else {
-            $this->count++;
         }
 
         //if number one in dice turn do not add to the sum
@@ -128,6 +128,16 @@ class Dice
         }
 
         $this->player2Turn[] = "<br>";
+
+        if ($this->allResults(0) < $this->allResults(1)) {
+            $this->unavailable(1);
+        }
+        $player1 = array_count_values($this->player1DicesHisto);
+        $player2 = array_count_values($this->player2DicesHisto);
+        //check ones (1) on histogram
+        if (isset($player1[1]) > isset($player2[1])) {
+            $this->unavailable(1);
+        }
     }
 
     /**
@@ -142,10 +152,25 @@ class Dice
     }
 
 
+    /**
+     * Roll all dices save their value.
+     *
+     * @return void.
+     */
+    public function getDicesHistogram($number)
+    {
+        $results = [$this->player1DicesHisto, $this->player2DicesHisto];
+        return $results[$number];
+    }
+
+
+
     public function allResults($number)
     {
         $results = [array_sum($this->player1Dice), array_sum($this->player2Dice)];
         if ($results[$number] >= 100) {
+            $this->unavailable(0);
+            $this->unavailable(1);
             return "You Win!!";
         }
         return $results[$number];

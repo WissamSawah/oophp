@@ -2,7 +2,21 @@
 /**
  * 100 Dices with GET
  */
-$app->router->any(["GET", "POST"], "100", function () use ($app) {
+
+ $app->router->get("Dice/init", function () use ($app) {
+    // init the session for the game start;
+    $title = "Dice100 (SESSION)";
+    //session_name("game");
+    // POST incoming
+    $player1 = $_POST["player1"] ?? 0;
+    $player2 = $_POST["player2"] ?? 0;
+    $game = new \Aisa\Dice\Dice($player1, $player2);
+    $_SESSION = [];
+
+    return $app->response->redirect("Dice/100");
+ });
+
+ $app->router->any(["GET", "POST"], "Dice/100", function () use ($app) {
     $title = "Dice100 (SESSION)";
     //session_name("game");
     // POST incoming
@@ -36,11 +50,17 @@ $app->router->any(["GET", "POST"], "100", function () use ($app) {
     if (isset($_POST["turn"])) {
         $game->unavailable(0);
     }
+
+    $dice = new \Aisa\Dice\DiceHistogram();
+    $histogram = new \Aisa\Dice\Histogram();
+    $histogram->injectData($dice);
+
     $data['game'] = $game;
     $data['player1'] = $player1;
     $data['player2'] = $player2;
+    $data['histogram'] = $histogram;
     $app->view->add("/Dice/Dice100", $data);
         return $app->page->render([
             "title" => $title,
         ]);
-});
+ });

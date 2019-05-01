@@ -1,24 +1,7 @@
-<h1 class="h1-game">Tärningsspel 100</h1>
+<h1 class="h1-game">Tärningsspel 100 (1)</h1>
 <div class="game">
-
-    <h3 display="2">Histogram:</h3>
-    <div class="collapse" id="player">
-      <div class="card card-body">
-          <p>Player1:</p>
-        <?= $histogram->getAsText($game->getDicesHistogram(0)); ?>
-      </div>
-    </div>
-
-    <p>PC:</p>
-
-    <div class="collapse" id="pc">
-      <div class="card card-body">
-        <?= $histogram->getAsText($game->getDicesHistogram(1)); ?>
-      </div>
-    </div>
-
     <form class="form-signin" action="" method="post">
-        <?php if (isset($_POST["player1"])) : ?>
+        <?php if (!is_null($app->request->getPost('player1'))) : ?>
             <button class="give-away" type="submit" name="turn" <?= $game->getSum(0); ?>>Give my turn to PC</button><br><br>
         <?php endif; ?>
     </form>
@@ -36,6 +19,11 @@
         <input type="hidden" name="player2" value="<?= $game->allResults(1)?>">
         <p class="sum">Sum is: <?= $game->allResults(1)?>.</p>
     </form>
+    <h1 class="h1-game">Histogram:</h1>
+          <p class="h1-game">Player1:</p>
+        <?= $histogram->getAsText($game->getDicesHistogram(0)); ?>
+          <p class="h1-game">PC:</p>
+        <?= $histogram->getAsText($game->getDicesHistogram(1)); ?>
     <form class="" action="" method="post">
         <button type="submit" class="reset" name="reset">Reset</button>
     </form>
