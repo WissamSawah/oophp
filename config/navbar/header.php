@@ -68,5 +68,10 @@ return [
             "url" => "Dice",
             "title" => "Spela 100Dice",
         ],
+        [
+            "text" => "Movie",
+            "url" => "movie_one/init",
+            "title" => "My movie database",
+        ],
     ],
 ];

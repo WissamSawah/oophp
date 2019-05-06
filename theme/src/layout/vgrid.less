@@ -60,7 +60,12 @@ h1{
      // &&.inner-wrap-flash {
      //     max-width: 1440px;
      // }
- }
+}
+
+img.thumb {
+    max-width: 100px;
+    max-height: 100px;
+}
 
 
 .list-group {
@@ -94,6 +99,33 @@ h1{
     background-image: linear-gradient(#332e1f, #52492a);
     cursor: pointer;
 
+}
+
+table {
+    border: 1px solid #63562a;
+    padding: 0.5em;
+    width: 100%;
+    max-width: 100%;
+}
+
+tr.first {
+    background-color: #63562a;
+}
+
+tr:hover {
+    background-color: #eee;
+    color: #333;
+}
+
+th {
+    font-weight: bold;
+    border-bottom: 1px solid #63562a;
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #63562a;
 }
 
 .game {

@@ -63,12 +63,8 @@ class DiceController implements AppInjectableInterface
     public function initAction() : object
     {
         // init the session for the game start;
-        $title = "Dice100 (1)";
         //session_name("game");
         // POST incoming
-        $player1 = !is_null($this->app->request->getPost('player1')) ?? 0;
-        $player2 = !is_null($this->app->request->getPost('player2')) ?? 0;
-        $game = new Dice($player1, $player2);
         $_SESSION = [];
         return $this->app->response->redirect("Dice1/play");
     }
