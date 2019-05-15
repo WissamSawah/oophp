@@ -38,21 +38,21 @@ return [
             "url" => "om",
             "title" => "Om denna webbplats.",
         ],
-        [
-            "text" => "Styleväljare",
-            "url" => "style",
-            "title" => "Välj stylesheet.",
-        ],
-        [
-            "text" => "Docs",
-            "url" => "dokumentation",
-            "title" => "Dokumentation av ramverk och liknande.",
-        ],
-        [
-            "text" => "Test &amp; Lek",
-            "url" => "lek",
-            "title" => "Testa och lek med test- och exempelprogram",
-        ],
+        // [
+        //     "text" => "Styleväljare",
+        //     "url" => "style",
+        //     "title" => "Välj stylesheet.",
+        // ],
+        // [
+        //     "text" => "Docs",
+        //     "url" => "dokumentation",
+        //     "title" => "Dokumentation av ramverk och liknande.",
+        // ],
+        // [
+        //     "text" => "Test &amp; Lek",
+        //     "url" => "lek",
+        //     "title" => "Testa och lek med test- och exempelprogram",
+        // ],
         [
             "text" => "Anax dev",
             "url" => "dev",
@@ -72,6 +72,26 @@ return [
             "text" => "Movie",
             "url" => "movie_one/init",
             "title" => "My movie database",
+        ],
+        [
+            "text" => "TextFilter",
+            "url" => "filter/index",
+            "title" => "TextFilter tests",
+        ],
+        [
+            "text" => "Blog",
+            "url" => "blog/show-all",
+            "title" => "Blog",
+        ],
+        [
+            "text" => "Login",
+            "url" => "blog/login",
+            "title" => "Login",
+        ],
+        [
+            "text" => "Logout",
+            "url" => "blog/logout",
+            "title" => "Logout",
         ],
     ],
 ];

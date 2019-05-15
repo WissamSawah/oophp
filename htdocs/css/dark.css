@@ -5020,6 +5020,17 @@ table {
   width: 100%;
   max-width: 100%;
 }
+.error {
+  border: 2px solid darkred;
+  color: #ccc;
+  background: darkred;
+  margin-top: 16px;
+  font-size: 23px;
+  margin: 0 auto;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 tr.first {
   background-color: #63562a;
 }
@@ -5192,6 +5203,10 @@ form {
   margin: 0 auto;
   margin-left: 20px;
   margin-bottom: 20px;
+}
+.deleted {
+  color: #B29127;
+  text-decoration: line-through;
 }
 .warning {
   border: 2px solid #d1d12e;
