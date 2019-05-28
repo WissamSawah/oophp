@@ -221,6 +221,7 @@ EOD;
             "title" => $title,
         ]);
     }
+    
 
     public function filtersText($text, $filterType)
     {

@@ -30,7 +30,7 @@ if (isset($message2)) {
     </p>
 
     <p>
-        <input type="submit" name="login" value="Logga in"><br><br>
+        <input type="submit" name="login" value="Logga in" readonly><br><br>
     </p>
     </fieldset>
 </form>
